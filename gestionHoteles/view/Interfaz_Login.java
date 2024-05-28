@@ -81,8 +81,13 @@ public class Interfaz_Login extends JFrame {
 		lblNewLabel_5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			}
-		});
+                Interfaz_Registro registro = new Interfaz_Registro();
+                registro.setVisible(true);
+                registro.setLocationRelativeTo(null); // Centrar la nueva ventana
+                dispose(); // Cerrar la ventana actual si lo deseas
+            }
+        });
+
 		lblNewLabel_5.setForeground(new Color(174, 51, 249));
 		lblNewLabel_5.setBackground(new Color(255, 255, 255));
 		lblNewLabel_5.setFont(new Font("Calibri", Font.BOLD, 16));
@@ -91,7 +96,7 @@ public class Interfaz_Login extends JFrame {
 		
 		JLabel lblNewLabel_3 = new JLabel("Recuerdame");
 		lblNewLabel_3.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNewLabel_3.setBounds(51, 307, 73, 18);
+		lblNewLabel_3.setBounds(51, 308, 73, 18);
 		panel.add(lblNewLabel_3);
 		
 		txtIngreseTexto = new JTextField();
@@ -123,7 +128,7 @@ public class Interfaz_Login extends JFrame {
 		JCheckBox chckbxNewCheckBox = new JCheckBox("");
 		chckbxNewCheckBox.setBackground(new Color(255, 255, 255));
 		chckbxNewCheckBox.setFont(new Font("Calibri", Font.PLAIN, 23));
-		chckbxNewCheckBox.setBounds(29, 302, 21, 23);
+		chckbxNewCheckBox.setBounds(29, 303, 21, 23);
 		panel.add(chckbxNewCheckBox);
 		
 		JButton btnNewButton = new JButton("Iniciar Sesión");
@@ -137,6 +142,12 @@ public class Interfaz_Login extends JFrame {
 		lblNewLabel_4.setFont(new Font("Calibri", Font.PLAIN, 16));
 		lblNewLabel_4.setBounds(98, 400, 205, 33);
 		panel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_6 = new JLabel("* Datos Incorrectos");
+		lblNewLabel_6.setForeground(new Color(255, 0, 0));
+		lblNewLabel_6.setFont(new Font("Calibri", Font.BOLD, 16));
+		lblNewLabel_6.setBounds(380, 292, 132, 26);
+		panel.add(lblNewLabel_6);
 	}
 }
 
