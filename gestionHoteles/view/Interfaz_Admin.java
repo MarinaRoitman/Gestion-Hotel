@@ -13,6 +13,7 @@ import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTable;
+import javax.swing.JLabel;
 
 public class Interfaz_Admin extends JFrame {
 
@@ -61,31 +62,44 @@ public class Interfaz_Admin extends JFrame {
         tablaFuncional.addColumn("Precio");
         tablaFuncional.addColumn("Activo");
 
-        JButton btnAgregarProducto = new JButton("Agregar Producto");
-        btnAgregarProducto.setForeground(new Color(128, 0, 128));
-        btnAgregarProducto.setFont(new Font("Calibri", Font.PLAIN, 16));
-        btnAgregarProducto.setBackground(new Color(255, 255, 255));
-        btnAgregarProducto.setBounds(955, 257, 161, 40);
-        contentPane.add(btnAgregarProducto);
+        JButton btnAgregarHabitacion = new JButton("Agregar Habitación");
+        btnAgregarHabitacion.setForeground(new Color(128, 0, 128));
+        btnAgregarHabitacion.setFont(new Font("Calibri", Font.PLAIN, 16));
+        btnAgregarHabitacion.setBackground(new Color(255, 255, 255));
+        btnAgregarHabitacion.setBounds(946, 258, 181, 40);
+        contentPane.add(btnAgregarHabitacion);
 
-        JButton btnEliminarProducto = new JButton("Eliminar Producto");
-        btnEliminarProducto.setForeground(new Color(128, 0, 128));
-        btnEliminarProducto.setFont(new Font("Calibri", Font.PLAIN, 16));
-        btnEliminarProducto.setBackground(Color.WHITE);
-        btnEliminarProducto.setBounds(955, 326, 161, 40);
-        contentPane.add(btnEliminarProducto);
+        JButton btnEliminarHabitacion = new JButton("Eliminar Habitación");
+        btnEliminarHabitacion.setForeground(new Color(128, 0, 128));
+        btnEliminarHabitacion.setFont(new Font("Calibri", Font.PLAIN, 16));
+        btnEliminarHabitacion.setBackground(Color.WHITE);
+        btnEliminarHabitacion.setBounds(946, 327, 181, 40);
+        contentPane.add(btnEliminarHabitacion);
 
-        JButton btnModificarProducto = new JButton("Modificar Producto");
-        btnModificarProducto.setForeground(new Color(128, 0, 128));
-        btnModificarProducto.setFont(new Font("Calibri", Font.PLAIN, 16));
-        btnModificarProducto.setBackground(Color.WHITE);
-        btnModificarProducto.setBounds(955, 393, 161, 40);
-        contentPane.add(btnModificarProducto);
+        JButton btnModificarHabitacion = new JButton("Modificar Habitación");
+        btnModificarHabitacion.setForeground(new Color(128, 0, 128));
+        btnModificarHabitacion.setFont(new Font("Calibri", Font.PLAIN, 16));
+        btnModificarHabitacion.setBackground(Color.WHITE);
+        btnModificarHabitacion.setBounds(946, 394, 181, 40);
+        contentPane.add(btnModificarHabitacion);
         
         JPanel panel = new JPanel();
         panel.setBackground(new Color(199, 111, 251));
-        panel.setBounds(0, 0, 1164, 57);
+        panel.setBounds(0, 0, 1164, 66);
         contentPane.add(panel);
+        panel.setLayout(null);
+        
+        JLabel lblNewLabel = new JLabel("¿Que operación desea realizar?");
+        lblNewLabel.setFont(new Font("Calibri", Font.BOLD, 20));
+        lblNewLabel.setBounds(430, 23, 286, 23);
+        panel.add(lblNewLabel);
+        
+        JButton btnNewButton = new JButton("Atrás");
+        btnNewButton.setForeground(new Color(255, 255, 255));
+        btnNewButton.setBackground(new Color(62, 62, 62));
+        btnNewButton.setFont(new Font("Calibri", Font.BOLD, 16));
+        btnNewButton.setBounds(20, 21, 77, 28);
+        panel.add(btnNewButton);
     }
 }
 

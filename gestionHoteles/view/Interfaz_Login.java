@@ -143,10 +143,10 @@ public class Interfaz_Login extends JFrame {
 		lblNewLabel_4.setBounds(98, 400, 205, 33);
 		panel.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_6 = new JLabel("* Datos Incorrectos");
+		JLabel lblNewLabel_6 = new JLabel("* Campos vacios o Datos incorrectos");
 		lblNewLabel_6.setForeground(new Color(255, 0, 0));
 		lblNewLabel_6.setFont(new Font("Calibri", Font.BOLD, 16));
-		lblNewLabel_6.setBounds(380, 292, 132, 26);
+		lblNewLabel_6.setBounds(264, 292, 248, 26);
 		panel.add(lblNewLabel_6);
 	}
 }
