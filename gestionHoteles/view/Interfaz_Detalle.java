@@ -30,6 +30,8 @@ import javax.swing.border.EtchedBorder;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 public class Interfaz_Detalle extends JFrame {
 
@@ -66,6 +68,7 @@ public class Interfaz_Detalle extends JFrame {
         contentPane.setLayout(null);
         
         JPanel panel_1 = new JPanel();
+        panel_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(226, 198, 255), new Color(226, 198, 255), new Color(226, 198, 255), new Color(226, 198, 255)));
         panel_1.setLayout(null);
         panel_1.setBackground(new Color(206, 157, 255));
         panel_1.setBounds(0, 123, 1164, 51);
@@ -88,7 +91,13 @@ public class Interfaz_Detalle extends JFrame {
         panel.setBounds(0, 0, 1164, 115);
         contentPane.add(panel);
         
+        JLabel lblNewLabel_1 = new JLabel("");
+        lblNewLabel_1.setIcon(new ImageIcon(Interfaz_Detalle.class.getResource("/img/BostonResort (6).png")));
+        lblNewLabel_1.setBounds(0, 0, 1164, 115);
+        panel.add(lblNewLabel_1);
+        
         JPanel panel_3 = new JPanel();
+        panel_3.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
         panel_3.setLayout(null);
         panel_3.setBackground(new Color(206, 157, 255));
         panel_3.setBounds(0, 588, 1164, 56);
@@ -220,14 +229,14 @@ public class Interfaz_Detalle extends JFrame {
         btnNewButton_1_1.setForeground(Color.WHITE);
         btnNewButton_1_1.setFont(new Font("Calibri", Font.PLAIN, 14));
         btnNewButton_1_1.setBackground(new Color(63, 63, 63));
-        btnNewButton_1_1.setBounds(495, 116, 143, 34);
+        btnNewButton_1_1.setBounds(495, 114, 143, 34);
         panel_2_1.add(btnNewButton_1_1);
         
         JButton btnNewButton_1_1_1 = new JButton("Eliminar Huésped");
         btnNewButton_1_1_1.setForeground(Color.WHITE);
         btnNewButton_1_1_1.setFont(new Font("Calibri", Font.PLAIN, 14));
         btnNewButton_1_1_1.setBackground(new Color(63, 63, 63));
-        btnNewButton_1_1_1.setBounds(495, 161, 143, 34);
+        btnNewButton_1_1_1.setBounds(495, 159, 143, 34);
         panel_2_1.add(btnNewButton_1_1_1);
         
         JScrollPane scrollPane_1 = new JScrollPane();

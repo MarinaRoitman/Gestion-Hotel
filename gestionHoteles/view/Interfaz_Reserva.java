@@ -14,6 +14,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
 import javax.swing.JLabel;
 import java.awt.Color;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.SoftBevelBorder;
 
 public class Interfaz_Reserva extends JFrame {
 
@@ -48,7 +52,13 @@ public class Interfaz_Reserva extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(Interfaz_Reserva.class.getResource("/img/BostonResort (6).png")));
+		lblNewLabel_1.setBounds(0, 0, 1164, 115);
+		panel.add(lblNewLabel_1);
+		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, new Color(206, 157, 255), new Color(226, 198, 255), new Color(226, 198, 255), new Color(226, 198, 255)));
 		panel_1.setBackground(new Color(206, 157, 255));
 		panel_1.setLayout(null);
 		panel_1.setBounds(0, 123, 1164, 43);
@@ -60,6 +70,7 @@ public class Interfaz_Reserva extends JFrame {
 		panel_1.add(lblNewLabel);
 		
 		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel_3.setBackground(new Color(206, 157, 255));
 		panel_3.setBounds(0, 588, 1164, 56);
 		contentPane.add(panel_3);
