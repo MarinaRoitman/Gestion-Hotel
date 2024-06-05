@@ -32,6 +32,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Interfaz_Detalle extends JFrame {
 
@@ -80,6 +82,16 @@ public class Interfaz_Detalle extends JFrame {
         panel_1.add(lblDetalle);
         
         JButton btnNewButton_1 = new JButton("Atrás");
+        btnNewButton_1.addMouseListener(new MouseAdapter() {
+        	@Override
+        	public void mouseClicked(MouseEvent e) {
+        		Interfaz_Reserva atras = new Interfaz_Reserva();
+        		atras.setVisible(true);
+        		atras.setLocationRelativeTo(null); // Centrar la nueva ventana
+                dispose(); // Cerrar la ventana actual si lo deseas
+            }
+        });
+        
         btnNewButton_1.setBounds(20, 8, 76, 34);
         panel_1.add(btnNewButton_1);
         btnNewButton_1.setForeground(Color.WHITE);
@@ -225,19 +237,37 @@ public class Interfaz_Detalle extends JFrame {
         comboBox_2.setBounds(143, 40, 74, 32);
         panel_2_1.add(comboBox_2);
         
-        JButton btnNewButton_1_1 = new JButton("Registrar Huésped");
-        btnNewButton_1_1.setForeground(Color.WHITE);
-        btnNewButton_1_1.setFont(new Font("Calibri", Font.PLAIN, 14));
-        btnNewButton_1_1.setBackground(new Color(63, 63, 63));
-        btnNewButton_1_1.setBounds(495, 114, 143, 34);
-        panel_2_1.add(btnNewButton_1_1);
+        JButton  btnResgistrarHuesped = new JButton("Registrar Huésped");
+        btnResgistrarHuesped.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Mostrar la ventana de Registrar Huésped
+                Interfaz_RegistrarHuesped registrarHuespedFrame = new Interfaz_RegistrarHuesped();
+                registrarHuespedFrame.setVisible(true);
+                registrarHuespedFrame.setLocationRelativeTo(null); // Centrar la ventana secundaria
+            }
+        });
         
-        JButton btnNewButton_1_1_1 = new JButton("Eliminar Huésped");
-        btnNewButton_1_1_1.setForeground(Color.WHITE);
-        btnNewButton_1_1_1.setFont(new Font("Calibri", Font.PLAIN, 14));
-        btnNewButton_1_1_1.setBackground(new Color(63, 63, 63));
-        btnNewButton_1_1_1.setBounds(495, 159, 143, 34);
-        panel_2_1.add(btnNewButton_1_1_1);
+        
+        btnResgistrarHuesped.setForeground(Color.WHITE);
+        btnResgistrarHuesped.setFont(new Font("Calibri", Font.PLAIN, 14));
+        btnResgistrarHuesped.setBackground(new Color(63, 63, 63));
+        btnResgistrarHuesped.setBounds(495, 114, 143, 34);
+        panel_2_1.add(btnResgistrarHuesped);
+        
+        JButton btnEliminarHuesped = new JButton("Eliminar Huésped");
+        btnEliminarHuesped.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		// Mostrar la ventana de Eliminar Huésped
+        		Interfaz_EliminarHuesped registrarHuespedFrame = new Interfaz_EliminarHuesped();
+                registrarHuespedFrame.setVisible(true);
+                registrarHuespedFrame.setLocationRelativeTo(null); // Centrar la ventana secundaria
+        	}
+        });
+        btnEliminarHuesped.setForeground(Color.WHITE);
+        btnEliminarHuesped.setFont(new Font("Calibri", Font.PLAIN, 14));
+        btnEliminarHuesped.setBackground(new Color(63, 63, 63));
+        btnEliminarHuesped.setBounds(495, 159, 143, 34);
+        panel_2_1.add(btnEliminarHuesped);
         
         JScrollPane scrollPane_1 = new JScrollPane();
         scrollPane_1.setBackground(Color.WHITE);
@@ -318,6 +348,7 @@ public class Interfaz_Detalle extends JFrame {
         signo.setBounds(556, 320, 18, 22);
         panel_2_1.add(signo);
     }
+    
     
     // Renderer personalizado para las celdas
     class CustomTableCellRenderer extends JPanel implements TableCellRenderer {

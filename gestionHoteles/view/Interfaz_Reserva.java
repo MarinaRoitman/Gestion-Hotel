@@ -18,6 +18,8 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.SoftBevelBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Interfaz_Reserva extends JFrame {
 
@@ -77,6 +79,16 @@ public class Interfaz_Reserva extends JFrame {
 		panel_3.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Siguiente");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Interfaz_Detalle siguiente = new Interfaz_Detalle();
+				siguiente.setVisible(true);
+				siguiente.setLocationRelativeTo(null); // Centrar la nueva ventana
+                dispose(); // Cerrar la ventana actual si lo deseas
+            }
+        });
+		
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(63, 63, 63));
 		btnNewButton.setFont(new Font("Calibri", Font.BOLD, 14));
@@ -84,6 +96,16 @@ public class Interfaz_Reserva extends JFrame {
 		panel_3.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Atrás");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+        		Interfaz_PaginaGerente atras = new Interfaz_PaginaGerente();
+        		atras.setVisible(true);
+        		atras.setLocationRelativeTo(null); // Centrar la nueva ventana
+                dispose(); // Cerrar la ventana actual si lo deseas
+            }
+        });
+		
 		btnNewButton_1.setBackground(new Color(63, 63, 63));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Calibri", Font.PLAIN, 14));
@@ -104,6 +126,12 @@ public class Interfaz_Reserva extends JFrame {
         table.setFont(new Font("Calibri", Font.PLAIN, 12));
         table.setBackground(new Color(255, 255, 255));
 		scrollPane.setViewportView(table);		
+		
+		JLabel lblSeleccioneUna = new JLabel("* Seleccione una habitación para continuar");
+		lblSeleccioneUna.setForeground(Color.RED);
+		lblSeleccioneUna.setFont(new Font("Calibri", Font.BOLD, 16));
+		lblSeleccioneUna.setBounds(837, 561, 297, 26);
+		contentPane.add(lblSeleccioneUna);
 	}
 }
 
